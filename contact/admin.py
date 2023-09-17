@@ -12,3 +12,8 @@ class ContactAdmin(admin.ModelAdmin):
     list_max_show_all = 200
     list_editable = ('first_name', 'last_name')  # Deve ser uma tupla
     list_display_links = ('id', 'phone_name')  # Deve ser uma tupla
+
+@admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    ordering = ('-id',)  # O parâmetro ordering deve ser uma tupla
